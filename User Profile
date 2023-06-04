@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('profile-bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            font-family: "League Spartan";
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background: #2f8c79;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 1250px;
+            width: 1000px; 
+            position: absolute;
+        }
+
+        .profile-info {
+            display: inline-block;
+            margin: 10px;
+            font-size: 35px;
+            color:black;
+        
+        }
+
+        .profile-info h1{
+            position: relative;
+            bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            color: black;
+            font-size: 100px;
+
+        }
+
+
+        .label {
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        
+        }
+
+        .edit-button {
+            background-color: #105652;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 500ms;
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            left: 250px;
+            
+        }
+        .edit-button:hover {
+            background: #FFAC20;
+            color: floralwhite;
+            scale: 10px;
+        }
+
+        .edit-form {
+            display: none;
+            flex-direction: column;
+            color: white;
+        }
+
+        .edit-form .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+            .edit-form .input-container label {
+                font-weight: bold;
+                width: 200px;
+                font-size: 25px;
+            }
+
+            .edit-form .input-container input {
+                flex: 1;
+                padding: 5px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+                font-size: 20px;
+                width: 250px;
+            }
+
+                .edit-form input[type="submit"] {
+                    background-color: #105652;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+
+        .box{
+            font-size: 30px;
+            color: black;
+            width: 500px;
+            margin-left: 200px;
+            display: flex;
+            position: relative;
+            bottom: 30px;
+            left: 40px;
+        
+        }
+
+        #save-button{
+            margin-top: 10px;
+            transition: 500ms;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        #save-button:hover{
+            background: #FFAC20;
+            color: floralwhite;
+            scale: 10px;
+        }
+
+        .gender-container {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        font-weight: bold;
+        font-size: 25px;
+      
+    }
+        .gender-label {
+        margin-right: 100px; 
+        
+    }
+        .gender-container input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        margin: auto 20px;
+        cursor: pointer;
+       
+}
+            .deyt {
+            text-align: center;
+            width : 700px;
+            margin-top: 20px;
+            position: absolute;
+            left: 175px;
+            font-weight: bold;
+        }
+        .select-container {
+            display: inline-block;
+            margin-left: 32px;
+        }
+        .label-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 25px;
+            
+        }
+        .label-container  label {
+            margin-right: 20px;
+            padding: 8px;
+            
+         
+        }
+        select {
+            padding: 8px;
+            font-size: 14px;
+            width: 120px;
+        }
+
+    </style>
+    <script>
+        function showEditForm() {
+            document.getElementById('profile-info').style.display = 'none';
+            document.getElementById('edit-form').style.display = 'block';
+        }
+
+        function saveProfile() {
+            var username = document.getElementById('username').value;
+            var fullName = document.getElementById('full-name').value;
+            var email = document.getElementById('email').value;
+            var phoneNumber = document.getElementById('phone-number').value;
+            var fullAddress = document.getElementById('full-address').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var day = document.getElementById('day').value;
+            var month = document.getElementById('month').options[document.getElementById('month').selectedIndex].text;
+            var year = document.getElementById('year').value;
+            
+
+            document.getElementById('username-label').textContent = username;
+            document.getElementById('full-name-label').textContent = fullName;
+            document.getElementById('email-label').textContent = email;
+            document.getElementById('phone-number-label').textContent = phoneNumber;
+            document.getElementById('full-address-label').textContent = fullAddress;
+            
+           
+            document.getElementById('birthday-label').textContent = day + ' ' + month + ' ' + year;
+            document.getElementById('gender-label').textContent = gender;
+            document.getElementById('profile-info').style.display = 'inline-block';
+            document.getElementById('edit-form').style.display = 'none';
+        }
+
+        
+    </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="profile-container">
+        <div class="profile-info" id="profile-info">
+            <h1>Profile</h1>
+            <p>
+                <span class="label">Username:</span>
+                <span class="box" id="username-label">Bizz</span>
+            </p>
+            <p>
+                <span class="label">Full Name:</span>
+                <span class="box"id="full-name-label">Bwex Lien</span>
+            </p>
+            <p>
+                <span class="label">Email:</span>
+                <span class="box" id="email-label">asdf@gmail.com</span>
+            </p>
+            <p>
+                <span class="label">Phone Number:</span>
+                <span class="box" id="phone-number-label">09876543210</span>
+            </p>
+            <p>
+                <span class="label">Full Address:</span>
+                <span class="box" id="full-address-label"> Namec </span>
+            </p>
+
+            <p>
+                <span class="label">Gender:</span>
+                <span class="box" id="gender-label">Male</span>
+            </p>
+
+            <p>
+                <span class="label">Date of Birth:</span>
+                <span class="box" id="birthday-label"> 09 November 1999</span>
+            </p>
+            
+            <button class="edit-button" onclick="showEditForm()">Edit Profile</button>
+        </div>
+
+    <form class="edit-form" id="edit-form" onsubmit="event.preventDefault(); saveProfile();">
+    
+    <div class="input-container">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" id="phone-number" name="phone-number" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="full-address">Full Address:</label>
+                    <input type="text" id="full-address" name="full-address" required>
+                </div>
+                <form>
+                            <div class="gender-container">
+                            <span class="gender-label">Gender:</span>
+                            <label>
+                                <input type="radio" name="gender" value="male" checked> Male
+                                
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female">
+                                Female
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="Prefer not to say">
+                                Prefer not to say
+                            </label>
+                          </div>
+    <div class="deyt">
+        <form id="dobForm">
+            <div class="label-container">
+                <label for="day">Date of Birth:</label>
+                <div class="select-container">
+                    <select id="day" name="day">
+                
+                        <option value="">Day</option>
+                    </select>
+                </div>
+            
+                <div class="select-container">
+                    <select id="month" name="month">
+            
+                        <option value="">Month</option>
+                    </select>
+                </div>
+            
+                <div class="select-container">
+                    <select id="year" name="year">
+                        <option value="">Year</option>
+                    </select>
+                </div>
+            </div>
+               
+            <input type="submit" value="Save" id=save-button>
+        </form>
+    </div>
+    <script>
+        var daySelect = document.getElementById("day");
+        var monthSelect = document.getElementById("month");
+        var yearSelect = document.getElementById("year");
+
+       
+        for (var i = 1; i <= 31; i++) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            daySelect.appendChild(option);
+        }
+
+      
+        var months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        for (var i = 0; i < months.length; i++) {
+            var option = document.createElement("option");
+            option.value = i + 1;
+            option.text = months[i];
+            monthSelect.appendChild(option);
+        }
+
+   
+        var currentYear = new Date().getFullYear();
+        for (var i = currentYear; i >= currentYear - 100; i--) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            yearSelect.appendChild(option);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            var day = daySelect.value;
+            var month = monthSelect.value;
+            var year = yearSelect.value;
+
+           
+            console.log("Selected Date of Birth: " + day + "/" + month + "/" + year);
+        }
+    </script>
+            
+</body>
+
+</html>

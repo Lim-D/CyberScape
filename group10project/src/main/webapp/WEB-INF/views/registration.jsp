@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>User Registration</title>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
@@ -37,56 +36,13 @@
     .intro {
       text-align: center;
       margin-bottom: 10px;
-      margin-right: 30px;
     }
 
-    header {
+    h2 {
       font-size: 28px;
       font-weight: 600;
       color: #232832;
       text-align: center;
-    }
-
-    .register {
-      margin-top: 25px;
-      width: 40%;
-      height: 24px;
-      outline: none;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      text-decoration: underline #0171d3;
-    }
-
-    h2,
-    .link {
-      font-size: 18px;
-      font-weight: 600;
-      color: #232832;
-      text-align: center;
-    }
-
-    .link:hover {
-      text-decoration: underline;
-    }
-
-    .line {
-      position: relative;
-      height: 1px;
-      width: 100%;
-      margin: 20px 0;
-      background-color: #d4d4d4;
-    }
-
-    .line::before {
-      content: "Or";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      color: #232826;
-      padding: 0 15px;
     }
 
     .form {
@@ -97,8 +53,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: row;
-      padding: 50px;
+      flex-direction: column;
       margin: auto;
       border-radius: 16px;
       background: white;
@@ -110,7 +65,7 @@
       position: relative;
       height: 50px;
       width: 100%;
-      margin: 20px;
+      margin: 30px;
       /* text-align: center; */
     }
 
@@ -158,24 +113,12 @@
 
 </head>
   <body>
-    <script>
-      function redirectToRegistration() {
-        window.location.href = "/registration";
-      }
-    </script>
-
     <section class="container login">
       <div class="form content">
         <div class="intro">
-          <header>WELCOME</header>
-          <button class="register link" onclick="redirectToRegistration()">
-            Register
-          </button>
-          <div class="line"></div>
-          <h2>Login</h2>
+          <h2>User Registration</h2>
         </div>
-
-        <form action="/login" method="POST">
+        <form action="/register" method="POST">
           <div class="field input-field">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required />
@@ -186,12 +129,11 @@
             <input type="password" id="password" name="password" required />
           </div>
 
-          <div class="field">
-            <input type="submit" class="button" value="Login" />
+          <div class="field input-field">
+            <input type="submit" class="button" value="Register" />
           </div>
         </form>
       </div>
     </section>
   </body>
 </html>
-

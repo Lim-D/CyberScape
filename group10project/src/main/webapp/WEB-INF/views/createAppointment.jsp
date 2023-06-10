@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Create Appointment</title>
+</head>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
@@ -15,182 +14,172 @@
       font-family: "Ubuntu", sans-serif;
     }
 
-    .container {
-      height: 100vh;
-      width: 100%;
+    body {
       display: flex;
-      align-items: center;
+      height: 100vh;
       justify-content: center;
-      flex-direction: row;
-      position: relative;
-      background: rgb(2, 0, 36);
+      align-items: center;
       background: linear-gradient(
         0deg,
         rgba(2, 0, 36, 1) 0%,
         rgba(255, 255, 255, 1) 0%,
         rgba(238, 252, 255, 1) 25%
       );
-      padding: 20px;
+      color: #1b1b32;
     }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 10px;
-      margin-right: 30px;
-    }
-
-    header {
-      font-size: 28px;
-      font-weight: 600;
-      color: #232832;
-      text-align: center;
-    }
-
-    .register {
-      margin-top: 25px;
-      width: 40%;
-      height: 24px;
-      outline: none;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      text-decoration: underline #0171d3;
-    }
-
-    h2,
-    .link {
-      font-size: 18px;
-      font-weight: 600;
-      color: #232832;
-      text-align: center;
-    }
-
-    .link:hover {
-      text-decoration: underline;
-    }
-
-    .line {
-      position: relative;
-      height: 1px;
+    .container {
+      max-width: 700px;
       width: 100%;
-      margin: 20px 0;
-      background-color: #d4d4d4;
-    }
-
-    .line::before {
-      content: "Or";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      color: #232826;
-      padding: 0 15px;
-    }
-
-    .form {
-      position: absolute;
-      max-width: 630px;
-      width: 100%;
-      height: 450px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      padding: 50px;
-      margin: auto;
-      border-radius: 16px;
-      background: white;
-      border-bottom: 3px solid #59596c;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 14px;
       box-shadow: 0 5px 10px #aca2b7;
     }
 
-    form .field {
+    .title {
+      font-size: 20px;
+      font-weight: 500;
       position: relative;
-      height: 50px;
-      width: 100%;
-      margin: 20px;
-      /* text-align: center; */
-    }
-
-    .field label {
-      left: 0;
-    }
-
-    .field input {
-      height: 100%;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 400;
-      border-radius: 6px;
-      outline: none;
-      padding: 0 15px;
-      border: 1px solid #cacaca;
-    }
-
-    .field input:focus {
-      border-bottom-width: 4px;
-    }
-
-    .input-field {
       margin-bottom: 30px;
     }
 
-    .button {
-      border: none;
-      font-size: 16px;
-      padding: 8px;
-      font-weight: 400;
-      border-radius: 6px;
-      cursor: pointer;
-      color: white;
-      background-color: #0171d3;
-      transition: all 0.3s ease;
-      margin-top: 10px;
+    .title::before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 35px;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      left: 0;
+      bottom: 0;
     }
-    .button:hover {
-      color: white;
-      background-color: rgb(81, 140, 193);
+
+    .container form .appointmentDetails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0px 12px 0;
+    }
+
+    form .appointmentDetails .input-box {
+      margin-bottom: 20px;
+      width: calc(100% / 2 - 20px);
+    }
+
+    .input-box label {
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .input-box input {
+      height: 45px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #cacaca;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+      padding: 15px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-box input:focus,
+    .input-box input:valid {
+      border-color: #71b7e6;
+    }
+
+    .description textarea {
+      height: 65px;
+      max-height: 95px;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 5px;
+      border: 1px solid #cacaca;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+      padding: 15px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .description textarea:focus,
+    .description textarea:valid {
+      border-color: #71b7e6;
+    }
+
+    form .button {
+      height: 50px;
+      margin: 15px 0;
+    }
+
+    .button input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      color: 1b1b32;
+      background-color: #9ec4e6;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .button input:hover {
+      background-color: #c7d6e2;
     }
   </style>
 
-
-</head>
   <body>
-    <script>
-      function redirectToRegistration() {
-        window.location.href = "/registration";
-      }
-    </script>
-
-    <section class="container login">
-      <div class="form content">
-        <div class="intro">
-          <header>WELCOME</header>
-          <button class="register link" onclick="redirectToRegistration()">
-            Register
-          </button>
-          <div class="line"></div>
-          <h2>Login</h2>
-        </div>
-
-        <form action="/login" method="POST">
-          <div class="field input-field">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-
-          <div class="field input-field">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-
-          <div class="field">
-            <input type="submit" class="button" value="Login" />
-          </div>
-        </form>
+    <div class="container">
+      <div class="title">
+        <h1>Create Appointment</h1>
       </div>
-    </section>
+
+      <form action="/createAppointment" method="POST">
+        <div class="appointmentDetails">
+          <div class="input-box">
+            <label for="eventTitle">Event Title:</label>
+            <input type="text" id="eventTitle" name="eventTitle" required />
+          </div>
+
+          <div class="input-box">
+            <label for="startDateTime">Start Date and Time:</label>
+            <input
+              type="datetime-local"
+              id="startDateTime"
+              name="startDateTime"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label for="endDateTime">End Date and Time:</label>
+            <input
+              type="datetime-local"
+              id="endDateTime"
+              name="endDateTime"
+              required
+            />
+          </div>
+
+          <div class="input-box location">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required />
+          </div>
+
+          <div class="input-box description">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Create" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
-

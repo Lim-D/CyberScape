@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family:"Ubuntu", sans-serif;
+  box-sizing: border-box;
+ 
+}
+
+body {
+  /* background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+  background-size: cover; */
+  background-color: #1f2833;
+}
+
+
+.navbar {
+  /* color: #66fcf1; */
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  background: #162231;
+}
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-btn-line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 254, 254);
+  margin: 2px 0;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 20px;
+  color: #66fcf1;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  color: #66fcf1;
+  text-decoration: none;
+  padding: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #45a293;
+}
+
+.bookify img {
+  width: 1400px;
+}
+
+
+
+.about {
+  width: 100%;
+ padding: 78px 0px;
+}
+
+
+.logo {
+   left: 300px;
+   
+}
+
+/* .main .logo-bookify {
+  height: auto;
+  width: 420px;
+  font-size: 55px;
+  font-weight: 600;
+  color: aliceblue;
+  text-align: center;
+  margin-bottom: 20px;
+ 
+} */
+
+.about-text {
+  width: 550px;
+  padding: 30px;
+  margin-bottom: 10px;
+}
+
+.main {
+  height: 100vh;
+  width: 1130px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.main .bx {
+  font-size: 55px;
+}
+
+.about-text h2 {
+  color: #66fcf1;
+  font-size: 30px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+
+.about-us {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 30px;
+}
+.about-us::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width:110px;
+    background: #66fcf1;
+    left: 190px;
+    bottom: 0;
+    top: 40px;
+}
+
+
+
+.about-text p {
+  color: #66fcf1;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-weight: 18px;
+  margin-bottom: 45px;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 20px 0;
+  background-color: transparent;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: violet;
+  color: aliceblue;
+  padding: 0 15px;
+}
+
+/* PROFILES */
+
+.container {
+  margin: 20px 40px;
+  color: azure;
+  margin-top: 150px;
+  
+}
+
+.heading {
+  font-size: 60px;
+  color: #45a293;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.heading span {
+  font-style: italic;
+  font-size: 30px;
+  color: #66fcf1;
+}
+
+
+.profiles {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin: 20px 80px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 240px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 400ms;  
+  object-fit:cover;
+}
+
+.eachProfile {
+  flex-basis: 200px;
+  color: #45a293;
+}
+
+.user-name {
+  margin-top: 30px;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.profiles h5 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #66fcf1;  
+  padding: 7px;
+  
+}
+
+
+
+
+
+

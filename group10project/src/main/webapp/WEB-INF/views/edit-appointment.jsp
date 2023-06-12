@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Edit Appointment</title>
-</head>
+  </head>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
@@ -20,12 +21,10 @@
       height: 100vh;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(
-        0deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(238, 252, 255, 1) 25%
-      );
+      background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
       color: #1b1b32;
     }
 

@@ -58,4 +58,9 @@ public class HomeController {
         return "guests"; // Return the name of the guests.jsp file
     }
 
+    @GetMapping("/about")
+    public String showAboutPage() {
+        return "about";
+    }
+
 }

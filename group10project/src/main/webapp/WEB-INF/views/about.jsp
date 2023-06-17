@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>About</title>
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -26,7 +26,7 @@
     }
 
     body {
-      /* background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+      /* background-image: url("${pageContext.request.contextPath}/images/bookify.gif");
       background-size: cover; */
       background-color: #1f2833;
     }
@@ -89,7 +89,7 @@
     }
 
     .bookify img {
-      width: 1400px;
+      width: 1260px;
     }
 
 
@@ -280,7 +280,7 @@
       </ul>
     </div>
     <div class="bookify">
-      <img src="https://i.pinimg.com/originals/f8/b0/db/f8b0dbf255bb0ee6122b4e483901f715.gif" alt="" />
+       <img src="${pageContext.request.contextPath}/images/bookify.gif" alt="Bookify Logo" />
     </div>
     <section class="about">
       <div class="main">
@@ -310,8 +310,7 @@
         <h1 class="heading"><span>meet</span>Our Team</h1>
         <div class="profiles">
           <div class="eachProfile">
-            <img src="https://i.pinimg.com/originals/ac/ae/4c/acae4c105258ccb9859a7d91b87f8118.jpg" alt="" class="profile-image" />
-
+            <img src="${pageContext.request.contextPath}/images/Darius.jpg" alt="Darius Lim" class="profile-image" />
             <h3 class="user-name">Darius Lim</h3>
             <h5 class="">Leader/Programmer</h5>
           </div>
@@ -319,7 +318,7 @@
           <!-- TRISTAN -->
 
           <div class="eachProfile">
-            <img src="https://i.pinimg.com/originals/47/58/d2/4758d298492e25c22879c3d422192edc.jpg" alt="" class="profile-image" />
+            <img src="${pageContext.request.contextPath}/images/Tristan.jpg" alt="Tristan Ocampo" class="profile-image" />
 
             <h3 class="user-name">Tristan Ocampo</h3>
             <h5>Business Analyst</h5>
@@ -327,7 +326,7 @@
 
           <!-- JULI -->
           <div class="eachProfile">
-            <img src="https://i.pinimg.com/originals/c1/dd/60/c1dd6057c542c934c64fff48b458c734.png" alt="" class="profile-image" />
+            <img src="${pageContext.request.contextPath}/images/Juli.PNG" alt="Julianne Rico" class="profile-image" />
 
             <h3 class="user-name">Julianne Rico</h3>
             <h5>Programmer</h5>
@@ -336,7 +335,7 @@
           <!-- BRIX -->
 
           <div class="eachProfile">
-            <img src="https://i.pinimg.com/originals/9c/06/65/9c0665ad3a8915fc447878ed980a7a70.jpg" alt="" class="profile-image" />
+            <img src="${pageContext.request.contextPath}/images/brix.jpg" alt="Brixneil Shafer" class="profile-image" />
 
             <h3 class="user-name">Brixneil Shafer</h3>
             <h5>Programmer</h5>

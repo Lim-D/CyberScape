@@ -18,8 +18,12 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(238, 252, 255, 1) 25%);
+            background-image: url("${pageContext.request.contextPath}/images/background.jpg");
+            background-size: cover;
+            background-position: center;
+
             color: #1b1b32;
+            padding: 30px;
         }
 
         .container {
@@ -29,11 +33,12 @@
             justify-content: center;
             max-width: 500px;
             width: 100%;
-            height: 300px;
+            min-height: 300px;
             background: #fff;
             padding: 25px 30px;
             border-radius: 14px;
             box-shadow: 0 5px 10px #aca2b7;
+            transition: height 0.3s ease; /* Add transition for smooth height adjustment */
         }
 
         h1 {
@@ -43,10 +48,10 @@
 
         button {
             padding: 12px 20px;
-            background-color: #9ec4e6;
+            color: white;
             border: none;
             border-radius: 4px;
-            color: #1b1b32;
+            background-color: rgb(37, 75, 87);
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
@@ -54,7 +59,9 @@
         }
 
         button:hover {
-            background-color: #0c76d2;
+          color: white;
+          background-color: rgb(76, 152, 175);
+
         }
     </style>
 
@@ -105,6 +112,9 @@
                         bookAppointment(appointmentId, guestName);
                     }
                 });
+
+                // Adjust container height based on the contents
+                adjustContainerHeight();
             }
 
             // Function to book an appointment
@@ -117,6 +127,13 @@
                         alert('Appointment booked successfully!');
                     }
                 });
+            }
+
+            function adjustContainerHeight() {
+                var container = $('.container');
+                var appointmentsContainer = $('#appointments-container');
+                var containerHeight = appointmentsContainer.outerHeight() + 80;
+                container.height(containerHeight);
             }
         });
     </script>

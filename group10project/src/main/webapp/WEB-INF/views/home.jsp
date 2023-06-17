@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"></head>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
 
@@ -14,9 +13,10 @@
       body {
         margin: 0;
         padding: 0;
-        background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+        background-image: url("${pageContext.request.contextPath}/images/background.jpg");
         background-size: cover;
         background-position: center;
+        padding-bottom: 50px;
       }
 
       .profile-image {
@@ -252,58 +252,6 @@
         color: rgb(66, 66, 66);
         border-radius: 10px;
       }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            background-color: #1f2833;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .footer-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex: 1;
-            height: auto;
-            width: 100%;
-            padding: 0 3%;
-        }
-
-        .logo img{
-            height: 75px;
-            width: 375px;
-        }
-
-        .contact {
-            font-weight: bold;
-            font-size: 20px;
-            color: white;
-        }
-
-        .icons {
-            display: flex;
-            justify-content: right;
-            align-items: center;
-        }
-
-        .icons img{
-            height: 30px;
-            width: 30px;
-            margin: 0 5px;
-        }
-
-        .rights-reserved {
-           flex: 1;
-           text-align: center;
-           color: white;
-           font-size: small;
-      }
-
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -365,6 +313,18 @@
           var appointmentsTable = $("#appointments-table");
           appointmentsTable.empty();
 
+          var headerRow = $("<tr>");
+          headerRow.append($("<th>").text("Event Title"));
+          headerRow.append($("<th>").text("Start Date/Time"));
+          headerRow.append($("<th>").text("End Date/Time"));
+          headerRow.append($("<th>").text("Location"));
+          headerRow.append($("<th>").text("Description"));
+          headerRow.append($("<th>").text("Guest Name"));
+          headerRow.append($("<th>").text("Booked by Guest"));
+          headerRow.append($("<th>").text("Edit"));
+          headerRow.append($("<th>").text("Delete"));
+          appointmentsTable.append(headerRow);
+
           $.each(appointments, function (index, appointment) {
             var row = $("<tr>");
             row.append($("<td>").text(appointment.eventTitle));
@@ -373,9 +333,7 @@
             row.append($("<td>").text(appointment.location));
             row.append($("<td>").text(appointment.description));
             row.append($("<td>").text(appointment.guestName));
-            row.append(
-              $("<td>").text(appointment.bookedByGuest ? "Yes" : "No")
-            );
+            row.append($("<td>").text(appointment.bookedByGuest ? "Yes" : "No"));
             row.append(
               $("<td>").html(
                 '<button class="edit-button" data-id="' +
@@ -488,25 +446,4 @@
       </script>
     </div>
   </body>
-
-  <footer>
-    <div class="footer-container">
-        <h1 class="logo">
-            <img src="bookify.gif" alt="logo">
-        </h1>
-        <div class="rights-reserved">&copy; 2023 Bookify. All Rights Reserved.</div>
-        <div class="contact">Contact Us:&nbsp;</div>
-        <div class="icons">
-           <a class="facebook" href="https://www.facebook.com/profile.php?id=100093647646549" target="_blank">
-               <img src="https://i.ibb.co/946fCBF/fb.png" alt="facebook">
-           </a>
-           <a class="twitter" href="https://twitter.com/Bookify_wxc" target="_blank">
-               <img src="https://i.ibb.co/wQzr0xr/twt.png" alt="twitter">
-           </a>
-           <a class="gmail" href="mailto:bookify.wxc@gmail.com" target="_blank">
-               <img src="https://i.ibb.co/Rh52xBy/mail.png" alt="gmail">
-          </a>
-    </div>
-</footer>
-
 </html>

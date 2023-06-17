@@ -25,7 +25,7 @@ pageEncoding="UTF-8"%>
         justify-content: center;
         flex-direction: row;
         position: relative;
-        background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+        background-image: url("${pageContext.request.contextPath}/images/background.jpg");
         background-size: cover;
         background-position: center;
         padding: 20px;
@@ -143,13 +143,13 @@ pageEncoding="UTF-8"%>
         border-radius: 6px;
         cursor: pointer;
         color: white;
-        background-color: #0171d3;
+        background-color: rgb(37, 75, 87);
         transition: all 0.3s ease;
         margin-top: 10px;
       }
       .button:hover {
         color: white;
-        background-color: rgb(81, 140, 193);
+        background-color: rgb(76, 152, 175);
       }
     </style>
   </head>

@@ -7,7 +7,7 @@ pageEncoding="UTF-8" %>
   </head>
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+    @import url("${pageContext.request.contextPath}/images/background.jpg");
 
     * {
       margin: 0;

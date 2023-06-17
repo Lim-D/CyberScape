@@ -19,7 +19,7 @@
       height: 100vh;
       justify-content: center;
       align-items: center;
-      background-image: url(https://i.pinimg.com/564x/b0/9b/24/b09b24efb5960e4ee6d47974edc7145c.jpg);
+      background-image: url("${pageContext.request.contextPath}/images/background.jpg");
       background-size: cover;
       background-position: center;
       padding: 20px;
